@@ -8,7 +8,49 @@ body {
 	background-repeat: repeat;
 }
 
+h1 {
+	font-family: 'Abril Fatface', serif;
+	color: red;
+	font-size: 55px;
+	border-bottom:2px solid blue;
+}
+
+#display {
+	
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+#questions {
+	border: 2px blue dashed;
+	padding: 50px;
+}
+
+form {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid red;
+}
+
 #main {
+	
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	padding: 40px;
 	background-color: #fff;
 	margin: 40px;
+}
+
+
+button {
+	appearance: none;
+  box-shadow: none;
+  border: blue;
+  padding: 10px;
+  background-color: blue;
+  color: #fff;
+  font-size: 24px;
+  	margin-top: 30px;
+  	margin-bottom:30px;
+
 }

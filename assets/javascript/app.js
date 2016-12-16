@@ -26,7 +26,7 @@ var q6;
 
  var stopwatch = {
 
- 	time: 20,
+ 	time: 120,
 
  	start: function() {
     	myWatch = setInterval(stopwatch.count, 1000);
@@ -38,8 +38,8 @@ var q6;
 
   	reset: function() {
 
-    	stopwatch.time = 20;
-      $("#display").text("00.20");
+    	stopwatch.time = 120;
+      $("#display").text("02:00");
  	 },
 
  	count: function() {
@@ -135,12 +135,11 @@ var printQuestions = function() {
 	for (var i = 0; i < questions.length; i++) {
 		$("#questions").append("<p>" + questions[i].question + " </p>" + "<form>" + "<input value='true' type='radio' name='q" + i + "'>" + "True" + "    " + "<input value='false' type='radio' name='q" + i + "'>" + "False" +   "</form>");
 		};
-	$("#questions").append("<button id='submit'> Check my score! </button>");
+	$("#questions").append("<button id='submit'> GRADE ME </button>");
 }
 
 
 var getAnswers = function(){
-
 	for (var i = 0; i < questions.length; i++) {
 		
 		answers.push($("input[name='q" + i + "']:checked").val());
@@ -164,11 +163,12 @@ var gameEnd = function () {
 			stopwatch.stop();
     		stopwatch.reset();
     		getAnswers();
-    		$("#display").html("Click start to play again!");
-    		$("#questions").html("Great job!" + "<br>" 
+    		$("#display").html("Click start to play again");
+    		$("#questions").html("<b>" + "Great job!" + "</b>" +"<br><br>" 
     			+ "Correct: " + correctCount + "<br>" 
     			+ "Incorrect: " + wrongCount + "<br>" 
     			+ "Total Answered: " + answeredCount + "<br>");
+
     		 
 }
 
@@ -182,16 +182,25 @@ window.onload = function() {
 	$("#display").text("Click start to begin the game!");
 	$("#start").click(function(){
 		stopwatch.start();
+		//answers.empty();
 		$("#questions").empty();
+		questions = [];
+		answers=[];
+		correctCount=0;
+		wrongCount=0;
+		answeredCount=0;
 		createQuestions();
 		printQuestions();
 	$("#submit").on('click', function() {
 		gameEnd();
-
+		
 	});
 	
 	});
 }
+
+
+//resetting the answers??e
 
 
 
